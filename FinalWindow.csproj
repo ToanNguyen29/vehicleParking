@@ -1,0 +1,494 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6C94FFCE-2898-4873-8944-7C501A07D930}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FinalWindow</RootNamespace>
+    <AssemblyName>FinalWindow</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.UI2.WinForms.2.0.4.4\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomerBuilderPattern\IBuilder.cs" />
+    <Compile Include="CustomerBuilderPattern\CustomerBuilder.cs" />
+    <Compile Include="DatabaseContext.cs" />
+    <Compile Include="Migrations\202306030258315_ntt.cs" />
+    <Compile Include="Migrations\202306030258315_ntt.designer.cs">
+      <DependentUpon>202306030258315_ntt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306030306156_ntt1.cs" />
+    <Compile Include="Migrations\202306030306156_ntt1.designer.cs">
+      <DependentUpon>202306030306156_ntt1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306030621057_ntt2.cs" />
+    <Compile Include="Migrations\202306030621057_ntt2.designer.cs">
+      <DependentUpon>202306030621057_ntt2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\BaseSalary.cs" />
+    <Compile Include="Model\FeeKeep.cs" />
+    <Compile Include="Model\Revenue.cs" />
+    <Compile Include="Model\Rule.cs" />
+    <Compile Include="Model\Attendance.cs" />
+    <Compile Include="Model\Salary.cs" />
+    <Compile Include="SalaryDecoratorPattern\FineLate.cs" />
+    <Compile Include="SalaryDecoratorPattern\FineLaziness.cs" />
+    <Compile Include="SalaryDecoratorPattern\FineLie.cs" />
+    <Compile Include="SalaryDecoratorPattern\HardworkingBonus.cs" />
+    <Compile Include="SalaryDecoratorPattern\GoodCusReview.cs" />
+    <Compile Include="SalaryDecoratorPattern\HourWork.cs" />
+    <Compile Include="SalaryDecoratorPattern\SalaryDecoratorClass.cs" />
+    <Compile Include="Tool\CheckInput.cs" />
+    <Compile Include="VehicleFactoryPattern\VehicleFactory.cs" />
+    <Compile Include="View\KeepWorker\LoanContractForm\CreateLoanContract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\KeepWorker\LoanContractForm\CreateLoanContract.Designer.cs">
+      <DependentUpon>CreateLoanContract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\KeepWorker\LoanContractForm\LoanServiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\KeepWorker\LoanContractForm\LoanServiceForm.Designer.cs">
+      <DependentUpon>LoanServiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\KeepWorker\LongTermKeepContract\CreateLongTermContractForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\KeepWorker\LongTermKeepContract\CreateLongTermContractForm.designer.cs">
+      <DependentUpon>CreateLongTermContractForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Director\DirectorEditInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Director\DirectorEditInformationForm.Designer.cs">
+      <DependentUpon>DirectorEditInformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Director\FacilityCRUD\AddFacilityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Director\FacilityCRUD\AddFacilityForm.Designer.cs">
+      <DependentUpon>AddFacilityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Director\FacilityCRUD\UpdateFacilityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Director\FacilityCRUD\UpdateFacilityForm.Designer.cs">
+      <DependentUpon>UpdateFacilityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Director\List\DetailLoanContractForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Director\List\DetailLoanContractForm.Designer.cs">
+      <DependentUpon>DetailLoanContractForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Director\List\DetailLongContractForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Director\List\DetailLongContractForm.Designer.cs">
+      <DependentUpon>DetailLongContractForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Director\List\ListLoanContractForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Director\List\ListLoanContractForm.Designer.cs">
+      <DependentUpon>ListLoanContractForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Director\List\ListLongContractForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Director\List\ListLongContractForm.designer.cs">
+      <DependentUpon>ListLongContractForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Director\List\ListManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Director\List\ListManagerForm.Designer.cs">
+      <DependentUpon>ListManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Director\ManagersCRUD\AddManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Director\ManagersCRUD\AddManagerForm.Designer.cs">
+      <DependentUpon>AddManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Director\ManagersCRUD\UpdateManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Director\ManagersCRUD\UpdateManagerForm.Designer.cs">
+      <DependentUpon>UpdateManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FixWorker\FixWorkerEditInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FixWorker\FixWorkerEditInformationForm.Designer.cs">
+      <DependentUpon>FixWorkerEditInformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FixWorker\FixWorkerMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FixWorker\FixWorkerMainForm.designer.cs">
+      <DependentUpon>FixWorkerMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\KeepWorker\KeepWorkerEditInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\KeepWorker\KeepWorkerEditInformationForm.Designer.cs">
+      <DependentUpon>KeepWorkerEditInformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\KeepWorker\KeepWorkerMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\KeepWorker\KeepWorkerMainForm.designer.cs">
+      <DependentUpon>KeepWorkerMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\CalculateSalaryDayWorkerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Manager\CalculateSalaryDayWorkerForm.Designer.cs">
+      <DependentUpon>CalculateSalaryDayWorkerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\ListAttendanceWorker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Manager\ListAttendanceWorker.Designer.cs">
+      <DependentUpon>ListAttendanceWorker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\ListWorker\ListFixWorkerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Manager\ListWorker\ListFixWorkerForm.Designer.cs">
+      <DependentUpon>ListFixWorkerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\ListWorker\ListKeepWorkerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Manager\ListWorker\ListKeepWorkerForm.Designer.cs">
+      <DependentUpon>ListKeepWorkerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\ManagerEditInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Manager\ManagerEditInformationForm.Designer.cs">
+      <DependentUpon>ManagerEditInformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\AttendanceWorkerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Manager\AttendanceWorkerForm.Designer.cs">
+      <DependentUpon>AttendanceWorkerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\PayrollWokerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Manager\PayrollWokerForm.Designer.cs">
+      <DependentUpon>PayrollWokerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\ShiftCRUD\AddShiftForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Manager\ShiftCRUD\AddShiftForm.Designer.cs">
+      <DependentUpon>AddShiftForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\ShiftCRUD\ShiftWorkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Manager\ShiftCRUD\ShiftWorkForm.Designer.cs">
+      <DependentUpon>ShiftWorkForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\ShiftCRUD\UpdateShiftForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Manager\ShiftCRUD\UpdateShiftForm.Designer.cs">
+      <DependentUpon>UpdateShiftForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\WorkerCRUD\AddWorkerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Manager\WorkerCRUD\AddWorkerForm.Designer.cs">
+      <DependentUpon>AddWorkerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\WorkerCRUD\UpdateWorkerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Manager\WorkerCRUD\UpdateWorkerForm.Designer.cs">
+      <DependentUpon>UpdateWorkerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\System\Password\ChangePasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\System\Password\ChangePasswordForm.Designer.cs">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\System\Password\FindAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\System\Password\FindAccountForm.Designer.cs">
+      <DependentUpon>FindAccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\ManagerMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Manager\ManagerMainForm.Designer.cs">
+      <DependentUpon>ManagerMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\System\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\System\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Director\DirectorMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Director\DirectorMainForm.Designer.cs">
+      <DependentUpon>DirectorMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BillFix.cs" />
+    <Compile Include="Model\Car.cs" />
+    <Compile Include="Model\Contract.cs" />
+    <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\DayKeepContract.cs" />
+    <Compile Include="Model\Director.cs" />
+    <Compile Include="Model\Facility.cs" />
+    <Compile Include="Model\FixWorker.cs" />
+    <Compile Include="Model\KeepWorker.cs" />
+    <Compile Include="Model\LoanContract.cs" />
+    <Compile Include="Model\Manager.cs" />
+    <Compile Include="Model\LongTermKeepContract.cs" />
+    <Compile Include="Model\Motor.cs" />
+    <Compile Include="Model\Shift.cs" />
+    <Compile Include="Model\Truck.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\Vehicle.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Migrations\202306030258315_ntt.resx">
+      <DependentUpon>202306030258315_ntt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306030306156_ntt1.resx">
+      <DependentUpon>202306030306156_ntt1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306030621057_ntt2.resx">
+      <DependentUpon>202306030621057_ntt2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\KeepWorker\LoanContractForm\CreateLoanContract.resx">
+      <DependentUpon>CreateLoanContract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\KeepWorker\LoanContractForm\LoanServiceForm.resx">
+      <DependentUpon>LoanServiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\KeepWorker\LongTermKeepContract\CreateLongTermContractForm.resx">
+      <DependentUpon>CreateLongTermContractForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Director\DirectorEditInformationForm.resx">
+      <DependentUpon>DirectorEditInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Director\FacilityCRUD\AddFacilityForm.resx">
+      <DependentUpon>AddFacilityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Director\FacilityCRUD\UpdateFacilityForm.resx">
+      <DependentUpon>UpdateFacilityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Director\List\DetailLoanContractForm.resx">
+      <DependentUpon>DetailLoanContractForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Director\List\DetailLongContractForm.resx">
+      <DependentUpon>DetailLongContractForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Director\List\ListLoanContractForm.resx">
+      <DependentUpon>ListLoanContractForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Director\List\ListLongContractForm.resx">
+      <DependentUpon>ListLongContractForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Director\List\ListManagerForm.resx">
+      <DependentUpon>ListManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Director\ManagersCRUD\AddManagerForm.resx">
+      <DependentUpon>AddManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Director\ManagersCRUD\UpdateManagerForm.resx">
+      <DependentUpon>UpdateManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FixWorker\FixWorkerEditInformationForm.resx">
+      <DependentUpon>FixWorkerEditInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FixWorker\FixWorkerMainForm.resx">
+      <DependentUpon>FixWorkerMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\KeepWorker\KeepWorkerEditInformationForm.resx">
+      <DependentUpon>KeepWorkerEditInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\KeepWorker\KeepWorkerMainForm.resx">
+      <DependentUpon>KeepWorkerMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Manager\CalculateSalaryDayWorkerForm.resx">
+      <DependentUpon>CalculateSalaryDayWorkerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Manager\ListAttendanceWorker.resx">
+      <DependentUpon>ListAttendanceWorker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Manager\ListWorker\ListFixWorkerForm.resx">
+      <DependentUpon>ListFixWorkerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Manager\ListWorker\ListKeepWorkerForm.resx">
+      <DependentUpon>ListKeepWorkerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Manager\ManagerEditInformationForm.resx">
+      <DependentUpon>ManagerEditInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Manager\ManagerMainForm.resx">
+      <DependentUpon>ManagerMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Manager\AttendanceWorkerForm.resx">
+      <DependentUpon>AttendanceWorkerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Manager\PayrollWokerForm.resx">
+      <DependentUpon>PayrollWokerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Manager\ShiftCRUD\AddShiftForm.resx">
+      <DependentUpon>AddShiftForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Manager\ShiftCRUD\ShiftWorkForm.resx">
+      <DependentUpon>ShiftWorkForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Manager\ShiftCRUD\UpdateShiftForm.resx">
+      <DependentUpon>UpdateShiftForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Manager\WorkerCRUD\AddWorkerForm.resx">
+      <DependentUpon>AddWorkerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Manager\WorkerCRUD\UpdateWorkerForm.resx">
+      <DependentUpon>UpdateWorkerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\System\Password\ChangePasswordForm.resx">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\System\Password\FindAccountForm.resx">
+      <DependentUpon>FindAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\Director\DirectorMainForm.resx">
+      <DependentUpon>DirectorMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\System\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Image\car.png" />
+    <Content Include="Image\clock.png" />
+    <Content Include="Image\currency-symbol.png" />
+    <Content Include="Image\email.png" />
+    <Content Include="Image\engineer.png" />
+    <Content Include="Image\female.png" />
+    <Content Include="Image\garage-car.png" />
+    <Content Include="Image\gender.png" />
+    <Content Include="Image\id.png" />
+    <Content Include="Image\key.png" />
+    <Content Include="Image\license-plate.png" />
+    <Content Include="Image\location.png" />
+    <Content Include="Image\male.png" />
+    <Content Include="Image\menu.png" />
+    <Content Include="Image\password.png" />
+    <Content Include="Image\phone-call.png" />
+    <Content Include="Image\phone.png" />
+    <Content Include="Image\quantity.png" />
+    <Content Include="Image\salary.png" />
+    <Content Include="Image\status.png" />
+    <Content Include="Image\technician.png" />
+    <Content Include="Image\user.png" />
+    <Content Include="Image\username.png" />
+    <Content Include="Image\verification.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
